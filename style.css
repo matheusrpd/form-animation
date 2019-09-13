@@ -68,3 +68,90 @@ form .btn-login {
   cursor: pointer;
   outline: 0;
 }
+
+/* Animações */
+
+form {
+  animation: fade 700ms;
+  overflow: hidden;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+form .input-block:nth-child(1) {
+  animation: move 500ms;
+}
+
+form .input-block:nth-child(2) {
+  animation: move 400ms;
+  animation-delay: 100ms;
+  animation-fill-mode: backwards;
+}
+
+form .btn-login {
+  animation: move 400ms;
+  animation-delay: 250ms;
+  animation-fill-mode: backwards;
+}
+
+@keyframes move {
+  from {
+    opacity: 0;
+    transform: translateX(-35%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.form-hide {
+  animation: down 1s forwards;
+  animation-timing-function: cubic-bezier(0, 1.2, 0.6, 0.2);
+}
+
+@keyframes down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+form.validate-error {
+  animation: nono 400ms linear, fade paused;
+  animation-iteration-count: 2;
+}
+
+@keyframes nono {
+  0%,
+  100% {
+    transform: translateX(0%);
+  }
+  35% {
+    transform: translateX(-15%);
+  }
+  70% {
+    transform: translateX(15%);
+  }
+}
+
+/* squares */
+
+.squares li {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.15);
+  display: block;
+  position: absolute;
+}
