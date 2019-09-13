@@ -43,3 +43,29 @@ form.addEventListener("animationend", event => {
     document.querySelector("body").style.overflow = "hidden";
   }
 });
+
+/* background squares */
+
+const ulSquares = document.querySelector("ul.squares");
+
+for (let i = 0; i < 21; i++) {
+  const li = document.createElement("li");
+
+  const random = (min, max) => Math.random() * (max - min) + min;
+
+  const size = Math.floor(random(10, 120));
+  const position = random(1, 95);
+  const duration = random(12, 24);
+  const delay = random(0.1, 5);
+
+  li.style.width = `${size}px`;
+  li.style.height = `${size}px`;
+  li.style.bottom = `${size}px`;
+  li.style.left = `${position}%`;
+
+  li.style.animmationDelay = `${delay}s`;
+  li.style.animationDuration = `${duration}s`;
+  li.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`;
+
+  ulSquares.appendChild(li);
+}
